@@ -50,6 +50,7 @@
  */
 @mixin blazer-utils-hidden-visually ( $focusable: false ) {
 	position: absolute; top: -9999px; left: -9999px;
+	white-space: nowrap;
 
 	@if $focusable {
 		@include _blazer-utils-hidden-visually-focusable;
