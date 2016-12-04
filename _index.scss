@@ -1,0 +1,55 @@
+/**
+ * =============================================================================
+ * Base
+ * =============================================================================
+ */
+
+@import 'mixins';
+
+/**
+ * Image replacement.
+ */
+
+.u-imageReplacement {
+	@include blazer-utils-image-replacement;
+}
+
+/**
+ * Hide from both screenreaders and browsers.
+ */
+
+.u-hidden {
+	@include blazer-utils-hidden;
+}
+
+/**
+ * Hide visually and from screenreaders, but maintain layout.
+ */
+
+.u-invisible {
+	@include blazer-utils-invisible;
+}
+
+/**
+ * Hide only visually, but have it available for screenreaders.
+ */
+
+.u-hiddenVisually {
+	@include blazer-utils-hidden-visually;
+
+	/**
+	 * Allow an element to be focusable when navigated to via the keyboard.
+	 */
+
+	&.is-focusable {
+		@include _blazer-utils-hidden-visually-focusable;
+	}
+}
+
+/**
+ * Clearfix for containing floats.
+ */
+
+.u-cf {
+	@include blazer-utils-cf;
+}

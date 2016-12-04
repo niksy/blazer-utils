@@ -1,0 +1,86 @@
+/**
+ * =============================================================================
+ * Base
+ * =============================================================================
+ */
+
+/**
+ * Allow an element to be focusable when navigated to via the keyboard.
+ */
+@mixin _blazer-utils-hidden-visually-focusable {
+
+	&:focus,
+	&:active {
+		position: static;
+	}
+}
+
+/**
+ * Image replacement.
+ */
+@mixin blazer-utils-image-replacement {
+	display: block;
+	overflow: hidden;
+	text-align: left; text-indent: -9999px;
+	direction: ltr;
+	background-color: transparent; background-repeat: no-repeat;
+
+	br {
+		display: none;
+	}
+}
+
+/**
+ * Hide from both screenreaders and browsers.
+ */
+@mixin blazer-utils-hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+/**
+ * Hide visually and from screenreaders, but maintain layout.
+ */
+@mixin blazer-utils-invisible {
+	visibility: hidden;
+}
+
+/**
+ * Hide only visually, but have it available for screenreaders.
+ */
+@mixin blazer-utils-hidden-visually ( $focusable: false ) {
+	position: absolute; top: -9999px; left: -9999px;
+
+	@if $focusable {
+		@include _blazer-utils-hidden-visually-focusable;
+	}
+}
+
+/**
+ * Revert changes made by mixin for visually hidden element.
+ */
+@mixin blazer-utils-hidden-visually-revert {
+	position: static;
+}
+
+/**
+ * Clearfix for containing floats.
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `cf` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ * 3. Just to be sure borders are really collapsed on clearfixed elements.
+ */
+@mixin blazer-utils-cf {
+
+	&:after {
+		content: ' '; /* 1 */
+		display: table; /* 2 */
+		border-collapse: collapse; /* 3 */
+		clear: both;
+	}
+}

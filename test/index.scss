@@ -1,0 +1,140 @@
+@import 'true';
+@import '../mixins';
+
+@include test-module('blazer-utils') {
+
+	@include test('blazer-utils-image-replacement') {
+
+		@include assert {
+
+			@include output {
+
+				.jackie {
+					@include blazer-utils-image-replacement;
+				}
+			}
+
+			@include expect {
+
+				.jackie {
+					display: block;
+					overflow: hidden;
+					text-align: left; text-indent: -9999px;
+					direction: ltr;
+					background-color: transparent; background-repeat: no-repeat;
+				}
+
+				.jackie br {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@include test('blazer-utils-hidden') {
+
+		@include assert {
+
+			@include output {
+
+				.jackie {
+					@include blazer-utils-hidden;
+				}
+			}
+
+			@include expect {
+
+				.jackie {
+					display: none !important;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	@include test('blazer-utils-invisible') {
+
+		@include assert {
+
+			@include output {
+
+				.jackie {
+					@include blazer-utils-invisible;
+				}
+			}
+
+			@include expect {
+
+				.jackie {
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	@include test('blazer-utils-hidden-visually') {
+
+		@include assert {
+
+			@include output {
+
+				.jackie {
+					@include blazer-utils-hidden-visually;
+				}
+
+				.macy {
+					@include blazer-utils-hidden-visually(true);
+				}
+
+				.chase {
+					@include blazer-utils-hidden-visually-revert;
+				}
+			}
+
+			@include expect {
+
+				.jackie {
+					position: absolute; top: -9999px; left: -9999px;
+					white-space: nowrap;
+				}
+
+				.macy {
+					position: absolute; top: -9999px; left: -9999px;
+					white-space: nowrap;
+				}
+
+				.macy:focus,
+				.macy:active {
+					position: static;
+				}
+
+				.chase {
+					position: static;
+				}
+			}
+		}
+	}
+
+	@include test('blazer-utils-cf') {
+
+		@include assert {
+
+			@include output {
+
+				.jackie {
+					@include blazer-utils-cf;
+				}
+			}
+
+			@include expect {
+
+				.jackie:after {
+					content: ' '; /* 1 */
+					display: table; /* 2 */
+					border-collapse: collapse; /* 3 */
+					clear: both;
+				}
+			}
+		}
+	}
+}
