@@ -1,6 +1,6 @@
 {
   "name": "blazer-utils",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Style utilities.",
   "main": "_index.scss",
   "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com)",
