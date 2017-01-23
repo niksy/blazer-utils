@@ -18,7 +18,7 @@ npm install blazer-utils --save
 @import 'blazer-utils/mixins';
 
 .jackie {
-	@include blazer-cf;
+	@include blazer-utils-cf;
 }
 ```
 
@@ -34,20 +34,20 @@ npm install blazer-utils --save
 
 ### Mixins
 
-* `blazer-image-replacement` - Image replacement.
-* `blazer-hidden` - Hide from both screenreaders and browsers.
-* `blazer-invisible` - Hide visually and from screenreaders, but maintain layout.
-* `blazer-hidden-visually` - Hide only visually, but have it available for screenreaders.
-* `blazer-hidden-visually-revert` - Revert changes made by mixin for visually hidden element.
-* `blazer-cf` - Clearfix for containing floats.
+* `blazer-utils-image-replacement` - Image replacement.
+* `blazer-utils-hidden` - Hide from both screenreaders and browsers.
+* `blazer-utils-invisible` - Hide visually and from screenreaders, but maintain layout.
+* `blazer-utils-hidden-visually` - Hide only visually, but have it available for screenreaders.
+* `blazer-utils-hidden-visually-revert` - Revert changes made by mixin for visually hidden element.
+* `blazer-utils-cf` - Clearfix for containing floats.
 
 ### Classes
 
-* `.u-imageReplacement` - Contains `blazer-image-replacement`.
-* `.u-hidden` - Contains `blazer-hidden`.
-* `.u-invisible` - Contains `blazer-invisible`.
-* `.u-hiddenVisually` - Contains `blazer-hidden-visually`.
-* `.u-cf` - Contains `blazer-cf`.
+* `.u-imageReplacement` - Contains `blazer-utils-image-replacement`.
+* `.u-hidden` - Contains `blazer-utils-hidden`.
+* `.u-invisible` - Contains `blazer-utils-invisible`.
+* `.u-hiddenVisually` - Contains `blazer-utils-hidden-visually`.
+* `.u-cf` - Contains `blazer-utils-cf`.
 
 ## Test
 
