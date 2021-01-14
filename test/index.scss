@@ -1,27 +1,24 @@
-@import 'true';
-@import '../mixins';
+@use 'true' as *;
+@use '../mixins' as blazer;
 
 @include test-module('blazer-utils') {
-
-	@include test('blazer-utils-image-replacement') {
-
-		@include assert {
-
-			@include output {
-
+	@include test('image-replacement') {
+		@include assert() {
+			@include output() {
 				.jackie {
-					@include blazer-utils-image-replacement;
+					@include blazer.image-replacement();
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				.jackie {
 					display: block;
 					overflow: hidden;
-					text-align: left; text-indent: -9999px;
+					text-align: left;
+					background-color: transparent;
+					background-repeat: no-repeat;
+					text-indent: -9999px;
 					direction: ltr;
-					background-color: transparent; background-repeat: no-repeat;
 				}
 
 				.jackie br {
@@ -31,19 +28,15 @@
 		}
 	}
 
-	@include test('blazer-utils-hidden') {
-
-		@include assert {
-
-			@include output {
-
+	@include test('hidden') {
+		@include assert() {
+			@include output() {
 				.jackie {
-					@include blazer-utils-hidden;
+					@include blazer.hidden();
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				.jackie {
 					display: none !important;
 					visibility: hidden;
@@ -52,19 +45,15 @@
 		}
 	}
 
-	@include test('blazer-utils-invisible') {
-
-		@include assert {
-
-			@include output {
-
+	@include test('invisible') {
+		@include assert() {
+			@include output() {
 				.jackie {
-					@include blazer-utils-invisible;
+					@include blazer.invisible();
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				.jackie {
 					visibility: hidden;
 				}
@@ -72,34 +61,34 @@
 		}
 	}
 
-	@include test('blazer-utils-hidden-visually') {
-
-		@include assert {
-
-			@include output {
-
+	@include test('hidden-visually') {
+		@include assert() {
+			@include output() {
 				.jackie {
-					@include blazer-utils-hidden-visually;
+					@include blazer.hidden-visually();
 				}
 
 				.macy {
-					@include blazer-utils-hidden-visually(true);
+					@include blazer.hidden-visually(true);
 				}
 
 				.chase {
-					@include blazer-utils-hidden-visually-revert;
+					@include blazer.hidden-visually-revert();
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				.jackie {
-					position: absolute; top: -9999px; left: -9999px;
+					position: absolute;
+					top: -9999px;
+					left: -9999px;
 					white-space: nowrap;
 				}
 
 				.macy {
-					position: absolute; top: -9999px; left: -9999px;
+					position: absolute;
+					top: -9999px;
+					left: -9999px;
 					white-space: nowrap;
 				}
 
@@ -115,24 +104,20 @@
 		}
 	}
 
-	@include test('blazer-utils-cf') {
-
-		@include assert {
-
-			@include output {
-
+	@include test('cf') {
+		@include assert() {
+			@include output() {
 				.jackie {
-					@include blazer-utils-cf;
+					@include blazer.cf();
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				.jackie:after {
 					content: ' '; /* 1 */
 					display: table; /* 2 */
-					border-collapse: collapse; /* 3 */
 					clear: both;
+					border-collapse: collapse; /* 3 */
 				}
 			}
 		}

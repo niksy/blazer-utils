@@ -1,7 +1,8 @@
-'use strict';
+import sassTrue from 'sass-true';
 
-const sassTrue = require('sass-true');
-
-sassTrue.runSass({
-	file: './test/index.scss'
-}, describe, it);
+sassTrue.runSass(
+	{
+		file: './test/index.scss'
+	},
+	{ describe, it }
+);

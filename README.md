@@ -15,17 +15,17 @@ npm install blazer-utils --save
 ### Mixins
 
 ```scss
-@import 'blazer-utils/mixins';
+@use 'blazer-utils/mixins' as blazer;
 
 .jackie {
-	@include blazer-utils-cf;
+	@include blazer.cf;
 }
 ```
 
 ### Classes
 
 ```scss
-@import 'blazer-utils/index';
+@use 'blazer-utils' as *;
 
 // File now contains all CSS classes
 ```
@@ -34,32 +34,39 @@ npm install blazer-utils --save
 
 ### Mixins
 
-* `blazer-utils-image-replacement` - Image replacement.
-* `blazer-utils-hidden` - Hide from both screenreaders and browsers.
-* `blazer-utils-invisible` - Hide visually and from screenreaders, but maintain layout.
-* `blazer-utils-hidden-visually` - Hide only visually, but have it available for screenreaders.
-* `blazer-utils-hidden-visually-revert` - Revert changes made by mixin for visually hidden element.
-* `blazer-utils-cf` - Clearfix for containing floats.
+-   `image-replacement` - Image replacement.
+-   `hidden` - Hide from both screenreaders and browsers.
+-   `invisible` - Hide visually and from screenreaders, but maintain layout.
+-   `hidden-visually` - Hide only visually, but have it available for
+    screenreaders.
+-   `hidden-visually-revert` - Revert changes made by mixin for visually hidden
+    element.
+-   `cf` - Clearfix for containing floats.
 
 ### Classes
 
-* `.u-imageReplacement` - Contains `blazer-utils-image-replacement`.
-* `.u-hidden` - Contains `blazer-utils-hidden`.
-* `.u-invisible` - Contains `blazer-utils-invisible`.
-* `.u-hiddenVisually` - Contains `blazer-utils-hidden-visually`.
-* `.u-cf` - Contains `blazer-utils-cf`.
+-   `.u-imageReplacement` - Contains `image-replacement`.
+-   `.u-hidden` - Contains `hidden`.
+-   `.u-invisible` - Contains `invisible`.
+-   `.u-hiddenVisually` - Contains `hidden-visually`.
+-   `.u-cf` - Contains `cf`.
 
 ## Test
 
-For manual tests, run `npm run test:manual:local` and open <http://localhost:9000/> in your browser.
+For manual tests, run `npm run test:manual:local` and open
+<http://localhost:9000/> in your browser.
 
 ## Browser support
 
-Tested in IE9+ and all modern browsers.
+Tested in IE11+ and all modern browsers.
 
 ## License
 
 MIT © [Ivan Nikolić](http://ivannikolic.com)
 
+<!-- prettier-ignore-start -->
+
 [ci]: https://travis-ci.org/niksy/blazer-utils
-[ci-img]: https://img.shields.io/travis/niksy/blazer-utils.svg
+[ci-img]: https://travis-ci.org/niksy/blazer-utils.svg?branch=master
+
+<!-- prettier-ignore-end -->

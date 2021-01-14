@@ -7,8 +7,7 @@
 /**
  * Allow an element to be focusable when navigated to via the keyboard.
  */
-@mixin _blazer-utils-hidden-visually-focusable {
-
+@mixin hidden-visually-focusable {
 	&:focus,
 	&:active {
 		position: static;
@@ -18,12 +17,14 @@
 /**
  * Image replacement.
  */
-@mixin blazer-utils-image-replacement {
+@mixin image-replacement {
 	display: block;
 	overflow: hidden;
-	text-align: left; text-indent: -9999px;
+	text-align: left;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
 	direction: ltr;
-	background-color: transparent; background-repeat: no-repeat;
 
 	br {
 		display: none;
@@ -33,7 +34,7 @@
 /**
  * Hide from both screenreaders and browsers.
  */
-@mixin blazer-utils-hidden {
+@mixin hidden {
 	display: none !important;
 	visibility: hidden;
 }
@@ -41,26 +42,27 @@
 /**
  * Hide visually and from screenreaders, but maintain layout.
  */
-@mixin blazer-utils-invisible {
+@mixin invisible {
 	visibility: hidden;
 }
 
 /**
  * Hide only visually, but have it available for screenreaders.
  */
-@mixin blazer-utils-hidden-visually ( $focusable: false ) {
-	position: absolute; top: -9999px; left: -9999px;
-	white-space: nowrap;
-
+@mixin hidden-visually ($focusable: false) {
 	@if $focusable {
-		@include _blazer-utils-hidden-visually-focusable;
+		@include hidden-visually-focusable();
 	}
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	white-space: nowrap;
 }
 
 /**
  * Revert changes made by mixin for visually hidden element.
  */
-@mixin blazer-utils-hidden-visually-revert {
+@mixin hidden-visually-revert {
 	position: static;
 }
 
@@ -76,12 +78,11 @@
  *    `:before` to contain the top-margins of child elements.
  * 3. Just to be sure borders are really collapsed on clearfixed elements.
  */
-@mixin blazer-utils-cf {
-
+@mixin cf {
 	&:after {
 		content: ' '; /* 1 */
 		display: table; /* 2 */
-		border-collapse: collapse; /* 3 */
 		clear: both;
+		border-collapse: collapse; /* 3 */
 	}
 }

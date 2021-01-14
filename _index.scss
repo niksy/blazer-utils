@@ -4,14 +4,14 @@
  * =============================================================================
  */
 
-@import 'mixins';
+@use 'mixins' as blazer;
 
 /**
  * Image replacement.
  */
 
 .u-imageReplacement {
-	@include blazer-utils-image-replacement;
+	@include blazer.image-replacement();
 }
 
 /**
@@ -19,7 +19,7 @@
  */
 
 .u-hidden {
-	@include blazer-utils-hidden;
+	@include blazer.hidden();
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 
 .u-invisible {
-	@include blazer-utils-invisible;
+	@include blazer.invisible();
 }
 
 /**
@@ -35,14 +35,14 @@
  */
 
 .u-hiddenVisually {
-	@include blazer-utils-hidden-visually;
+	@include blazer.hidden-visually();
 
 	/**
 	 * Allow an element to be focusable when navigated to via the keyboard.
 	 */
 
 	&.is-focusable {
-		@include _blazer-utils-hidden-visually-focusable;
+		@include blazer.hidden-visually-focusable();
 	}
 }
 
@@ -51,5 +51,5 @@
  */
 
 .u-cf {
-	@include blazer-utils-cf;
+	@include blazer.cf();
 }
