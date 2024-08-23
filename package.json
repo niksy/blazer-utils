@@ -7,19 +7,19 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "sass": "_index.scss",
-      "style": "_index.scss",
-      "default": "_index.scss"
+      "sass": "./_index.scss",
+      "style": "./_index.scss",
+      "default": "./_index.scss"
     },
     "./index": {
-      "sass": "_index.scss",
-      "style": "_index.scss",
-      "default": "_index.scss"
+      "sass": "./_index.scss",
+      "style": "./_index.scss",
+      "default": "./_index.scss"
     },
     "./mixins": {
-      "sass": "_mixins.scss",
-      "style": "_mixins.scss",
-      "default": "_mixins.scss"
+      "sass": "./_mixins.scss",
+      "style": "./_mixins.scss",
+      "default": "./_mixins.scss"
     },
     "./package.json": "./package.json"
   },
