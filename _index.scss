@@ -36,14 +36,6 @@
 
 .u-hiddenVisually {
 	@include blazer.hidden-visually();
-
-	/**
-	 * Allow an element to be focusable when navigated to via the keyboard.
-	 */
-
-	&.is-focusable {
-		@include blazer.hidden-visually-focusable();
-	}
 }
 
 /**

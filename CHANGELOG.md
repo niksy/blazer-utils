@@ -2,6 +2,9 @@
 
 ## [Unreleased][]
 
+-   Update hidden visually helper
+    ([#1](https://github.com/niksy/blazer-utils/issues/1))
+
 ## [2.0.1][] - 2024-08-23
 
 -   Update package exports

@@ -5,16 +5,6 @@
  */
 
 /**
- * Allow an element to be focusable when navigated to via the keyboard.
- */
-@mixin hidden-visually-focusable {
-	&:focus,
-	&:active {
-		position: static;
-	}
-}
-
-/**
  * Image replacement.
  */
 @mixin image-replacement {
@@ -49,21 +39,20 @@
 /**
  * Hide only visually, but have it available for screenreaders.
  */
-@mixin hidden-visually ($focusable: false) {
-	@if $focusable {
-		@include hidden-visually-focusable();
+@mixin hidden-visually {
+	&:not(:focus-within, :active) {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		user-select: none;
 	}
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-	white-space: nowrap;
-}
-
-/**
- * Revert changes made by mixin for visually hidden element.
- */
-@mixin hidden-visually-revert {
-	position: static;
 }
 
 /**

@@ -67,38 +67,21 @@
 				.jackie {
 					@include blazer.hidden-visually();
 				}
-
-				.macy {
-					@include blazer.hidden-visually(true);
-				}
-
-				.chase {
-					@include blazer.hidden-visually-revert();
-				}
 			}
 
 			@include expect() {
-				.jackie {
+				.jackie:not(:focus-within, :active) {
 					position: absolute;
-					top: -9999px;
-					left: -9999px;
+					width: 1px;
+					height: 1px;
+					margin: -1px;
+					padding: 0;
+					border: 0;
+					overflow: hidden;
 					white-space: nowrap;
-				}
-
-				.macy {
-					position: absolute;
-					top: -9999px;
-					left: -9999px;
-					white-space: nowrap;
-				}
-
-				.macy:focus,
-				.macy:active {
-					position: static;
-				}
-
-				.chase {
-					position: static;
+					clip: rect(0 0 0 0);
+					clip-path: inset(50%);
+					user-select: none;
 				}
 			}
 		}

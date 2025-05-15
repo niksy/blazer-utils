@@ -39,8 +39,6 @@ npm install blazer-utils --save
 -   `invisible` - Hide visually and from screenreaders, but maintain layout.
 -   `hidden-visually` - Hide only visually, but have it available for
     screenreaders.
--   `hidden-visually-revert` - Revert changes made by mixin for visually hidden
-    element.
 -   `cf` - Clearfix for containing floats.
 
 ### Classes
