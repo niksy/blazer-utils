@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [3.0.0][] - 2025-05-15
+
 -   Update hidden visually helper
     ([#1](https://github.com/niksy/blazer-utils/issues/1))
 
@@ -18,5 +20,6 @@
 
 [unreleased]: https://github.com/niksy/blazer-utils/compare/v2.0.0...HEAD
 [2.0.0]: https://github.com/niksy/blazer-utils/tree/v2.0.0
-[Unreleased]: https://github.com/niksy/blazer-utils/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/niksy/blazer-utils/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/niksy/blazer-utils/compare/v2.0.1...v3.0.0
 [2.0.1]: https://github.com/niksy/blazer-utils/tree/v2.0.1
