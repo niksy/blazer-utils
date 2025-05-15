@@ -70,7 +70,14 @@ module.exports = async () => {
 								sourceMap: true,
 								postcssOptions: {
 									config: false,
-									plugins: [atImport(), postcssPresetEnv()]
+									plugins: [
+										atImport(),
+										postcssPresetEnv({
+											features: {
+												'focus-within-pseudo-class': false
+											}
+										})
+									]
 								}
 							}
 						},
