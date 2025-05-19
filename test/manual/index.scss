@@ -1,2 +1,9 @@
 @import url('suitcss-components-test');
 @import '../../index';
+
+.u-imageReplacement {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background-color: hotpink;
+}

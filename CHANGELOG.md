@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+-   Improve image replacement helper
+
 ## [3.0.0][] - 2025-05-15
 
 -   Update hidden visually helper
