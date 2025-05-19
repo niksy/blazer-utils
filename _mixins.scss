@@ -10,7 +10,9 @@
 @mixin image-replacement ($handle-breaks: true) {
 	display: block;
 	overflow: hidden;
+	font-size: 1px;
 	text-align: left;
+	white-space: nowrap;
 	background-color: transparent;
 	background-repeat: no-repeat;
 	color: transparent;

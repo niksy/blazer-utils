@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+-   Add white space adjustments for image replacement helper
+
 ## [3.1.0][] - 2025-05-19
 
 -   Improve image replacement helper
