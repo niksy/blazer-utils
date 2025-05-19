@@ -7,17 +7,22 @@
 /**
  * Image replacement.
  */
-@mixin image-replacement {
+@mixin image-replacement ($handle-breaks: true) {
 	display: block;
 	overflow: hidden;
 	text-align: left;
 	background-color: transparent;
 	background-repeat: no-repeat;
-	text-indent: -9999px;
+	color: transparent;
+	text-indent: 100%;
 	direction: ltr;
+	user-select: none;
 
-	br {
-		display: none;
+	// stylelint-disable-next-line order/order
+	@if $handle-breaks == true {
+		br {
+			display: none;
+		}
 	}
 }
 

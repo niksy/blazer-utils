@@ -8,6 +8,9 @@
 				.jackie {
 					@include blazer.image-replacement();
 				}
+				.otis {
+					@include blazer.image-replacement($handle-breaks: false);
+				}
 			}
 
 			@include expect() {
@@ -17,12 +20,26 @@
 					text-align: left;
 					background-color: transparent;
 					background-repeat: no-repeat;
-					text-indent: -9999px;
+					color: transparent;
+					text-indent: 100%;
 					direction: ltr;
+					user-select: none;
 				}
 
 				.jackie br {
 					display: none;
+				}
+
+				.otis {
+					display: block;
+					overflow: hidden;
+					text-align: left;
+					background-color: transparent;
+					background-repeat: no-repeat;
+					color: transparent;
+					text-indent: 100%;
+					direction: ltr;
+					user-select: none;
 				}
 			}
 		}
